@@ -1,21 +1,19 @@
-// Get API key from dotenv file
-require("dotenv").config();
-const apiKey = process.env.API_KEY;
-
 // DOM elements
 const tempEl = document.querySelector(".js-temp");
 const iconEl = document.querySelector(".js-icon");
 const descEl = document.querySelector(".js-desc");
 const sliderEl = document.querySelector(".js-slider");
 
-// Hardcoded longitude and latitude (temporary)
+// Longitude and latitude
 const latitude = 50.850346;
 const longitude = 4.351721;
+
+const Key = "871ef41bac6733730e6e459b59b13b48";
 
 async function fetchWeatherData() {
     
     // Fetch weather data from OpenWeather API
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&lang=nl&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${Key}&lang=nl&units=metric`;
     const res = await fetch(`${url}`);
     const json = await res.json();
   
