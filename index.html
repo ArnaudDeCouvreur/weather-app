@@ -11,28 +11,20 @@
 <body>
     <main class="o-grid">
         <div class="swiper o-grid__slideshow c-slideshow">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="c-slideshow__img" src="assets/img/sunny/img1.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img class="c-slideshow__img" src="assets/img/sunny/img2.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img class="c-slideshow__img" src="assets/img/sunny/img3.jpg" alt="">
-                </div>
+            <div class="swiper-wrapper js-slider">
+
             </div>
         </div>
         <div class="o-grid__time c-time">
-            <div class="c-time__hour js-hour">12:00</div>
-            <div class="c-time__day js-day">Maandag</div>
-            <div class="c-time__date js-date">23 oktober 2023</div>
+            <div class="c-time__hour js-hour"></div>
+            <div class="c-time__day js-day"></div>
+            <div class="c-time__date js-date"></div>
         </div>
         <div class="o-grid__weather c-weather">
-            <div class="c-weather__temp">24°C</div>
+            <div class="c-weather__temp js-temp"></div>
             <div class="c-weather__forecast c-forecast">
-                <img class="c-forecast__icon" src="assets/icons/sunny.svg" alt="">
-                <span class="c-forecast__description">Zonnig</span>
+                <img class="c-forecast__icon js-icon" src="" alt="">
+                <span class="c-forecast__description js-desc"></span>
             </div>
         </div>
     </main>
@@ -40,5 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/time.js"></script>
+    <script src="js/weather.js"></script>
+    
 </body>
 </html>
