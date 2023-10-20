@@ -4,9 +4,9 @@ const iconEl = document.querySelector(".js-icon");
 const descEl = document.querySelector(".js-desc");
 const sliderEl = document.querySelector(".js-slider");
 
-// Longitude and latitude
-const latitude = 50.850346;
-const longitude = 4.351721;
+// Longitude and latitude (default is Brussels)
+let latitude = 50.850346;
+let longitude = 4.351721;
 
 const Key = "871ef41bac6733730e6e459b59b13b48";
 
@@ -72,4 +72,17 @@ async function fetchWeatherData() {
 
 }
 
+const success = (position) => {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    fetchWeatherData();
+}
+
+const error = (error) => {
+    latitude = 50.850346;
+    longitude = 4.351721;
+    fetchWeatherData();
+}
+
+navigator.geolocation.getCurrentPosition(success, error);
 fetchWeatherData();
