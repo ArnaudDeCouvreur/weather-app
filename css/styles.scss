@@ -81,6 +81,7 @@ body {
     &__hour {
         font-size: var(--fontSize-xl);
         font-weight: 500;
+        padding-bottom: 0.5rem;
     }
 }
 
@@ -101,7 +102,19 @@ body {
     display: flex;
     align-items: center;
     font-size: var(--fontSize-s);
+    gap: 0.2rem;
+    padding-bottom: 1rem;
     &__icon {
         width: 2rem;
+    }
+}
+
+.c-location {
+    display: flex;
+    align-items: center;
+    font-size: var(--fontSize-s);
+    gap: 0.4rem;
+    &__icon {
+        width: 1rem;
     }
 }

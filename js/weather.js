@@ -1,8 +1,9 @@
 // DOM elements
 const tempEl = document.querySelector(".js-temp");
-const iconEl = document.querySelector(".js-icon");
+const iconEl = document.querySelector(".js-weather-icon");
 const descEl = document.querySelector(".js-desc");
 const sliderEl = document.querySelector(".js-slider");
+const locationEl = document.querySelector(".js-location");
 
 // Longitude and latitude (default is Brussels)
 let latitude = 50.850346;
@@ -20,6 +21,7 @@ async function fetchWeatherData() {
     // Display weather data
     tempEl.textContent = `${Math.round(json.main.temp)}°C`;
     descEl.textContent = json.weather[0].description;
+    locationEl.textContent = json.name;
 
     // Change icon and slider images based on weather description
     let icon;
@@ -59,6 +61,7 @@ async function fetchWeatherData() {
 
     // Replace HTML element
     iconEl.src = `assets/icons/${icon}.svg`
+    
     sliderEl.innerHTML =
     `<div class="swiper-slide">
         <img class="c-slideshow__img" src="assets/img/${folder}/img1.jpg" alt="${folder}">
