@@ -1,13 +1,12 @@
+// Get API key from dotenv file
 require("dotenv").config();
+const apiKey = process.env.API_KEY;
 
 // DOM elements
-const tempEl = document.querySelector(".js-temp")
-const iconEl = document.querySelector(".js-icon")
-const descEl = document.querySelector(".js-desc")
-const sliderEl = document.querySelector(".js-slider")
-
-// Get API key from dotenv file
-const apiKey = process.env.API_KEY
+const tempEl = document.querySelector(".js-temp");
+const iconEl = document.querySelector(".js-icon");
+const descEl = document.querySelector(".js-desc");
+const sliderEl = document.querySelector(".js-slider");
 
 // Hardcoded longitude and latitude (temporary)
 const latitude = 50.850346;
