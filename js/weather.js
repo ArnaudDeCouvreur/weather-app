@@ -75,17 +75,22 @@ async function fetchWeatherData() {
 
 }
 
+// User accepted location tracking
 const success = (position) => {
     latitudeInt = position.coords.latitude;
     longitudeInt = position.coords.longitude;
     fetchWeatherData();
 }
 
+// User denied location tracking
 const error = (error) => {
     latitudeInt = 50.850346;
     longitudeInt = 4.351721;
     fetchWeatherData();
 }
 
+// Request user location
 navigator.geolocation.getCurrentPosition(success, error);
+
+// Fetch weather data
 fetchWeatherData();
