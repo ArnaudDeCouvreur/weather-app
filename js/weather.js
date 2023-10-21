@@ -6,15 +6,15 @@ const sliderEl = document.querySelector(".js-slider");
 const locationEl = document.querySelector(".js-location");
 
 // Longitude and latitude (default is Brussels)
-let latitude = 50.850346;
-let longitude = 4.351721;
+let latitudeInt = 50.850346;
+let longitudeInt = 4.351721;
 
-const Key = "871ef41bac6733730e6e459b59b13b48";
+const keyStr = "871ef41bac6733730e6e459b59b13b48";
 
 async function fetchWeatherData() {
     
     // Fetch weather data from OpenWeather API
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${Key}&lang=nl&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitudeInt}&lon=${longitudeInt}&appid=${keyStr}&lang=nl&units=metric`;
     const res = await fetch(`${url}`);
     const json = await res.json();
   
@@ -76,14 +76,14 @@ async function fetchWeatherData() {
 }
 
 const success = (position) => {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
+    latitudeInt = position.coords.latitude;
+    longitudeInt = position.coords.longitude;
     fetchWeatherData();
 }
 
 const error = (error) => {
-    latitude = 50.850346;
-    longitude = 4.351721;
+    latitudeInt = 50.850346;
+    longitudeInt = 4.351721;
     fetchWeatherData();
 }
 
